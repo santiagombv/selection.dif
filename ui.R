@@ -4,14 +4,20 @@ library(ggplot2)
 shinyUI(fluidPage(
   
   # Application title
-  titlePanel("Rasgos cuantitativos"),
+  titlePanel("Diferenciales de selección"),
   
   # Sidebar with a slider input for number of bins
   sidebarLayout(
     sidebarPanel(
-      sliderInput("genes", label = "genes", min=1, max=15, value =2, step = 1), 
-      sliderInput("ale", label = "alelos", min=2, max=5, value =2, step = 1),
-      width = 3),
+      selectInput("tipo", 
+                  label ="tipo de selección", 
+                  choices = c(positiva = "Zp", 
+                              negativa = "Zn", 
+                              estabilizadora = "Ze", 
+                              disruptiva = "Zd")),
+      sliderInput("SOB", label = "% post selección", 
+                  min=1, max=100, value = 100, step = 1), 
+      width = 3)
     
     
     # Show a plot of the generated distribution
