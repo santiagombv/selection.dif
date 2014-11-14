@@ -1,5 +1,6 @@
 library(shiny)
 library(ggplot2)
+library(gridExtra, quietly =T)
 
 shinyUI(fluidPage(
   
@@ -17,7 +18,7 @@ shinyUI(fluidPage(
                               disruptiva = "Zd")),
       sliderInput("SOB", label = "% post selección", 
                   min=1, max=100, value = 100, step = 1), 
-      width = 3)
+      width = 3),
     
     
     # Show a plot of the generated distribution

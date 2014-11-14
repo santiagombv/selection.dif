@@ -1,5 +1,6 @@
 library(shiny)
-
+library(ggplot2)
+library(gridExtra, quietly =T)
 shinyServer(function(input, output) {
   output$distPlot <- renderPlot({
     H <- input$SOB/100
